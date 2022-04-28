@@ -1,0 +1,312 @@
+{
+  "questions": [
+    {
+      "id": 0,
+      "content": "对着镜子张开嘴，你的牙齿状况属于哪一种？",
+      "mode": "single",
+      "drag": false
+    },
+    {
+      "id": 1,
+      "content": "上下牙轻叩，或用牙刷帮助观察整口牙是否各个稳固无松动？",
+      "mode": "single",
+      "drag": false
+    },
+    {
+      "id": 2,
+      "content": "口腔是否有溃疡、异味或莫名的肿胀？",
+      "mode": "multiple",
+      "drag": false
+    },
+    {
+      "id": 3,
+      "content": "观察牙龈的颜色，是否呈正常的粉红色？",
+      "mode": "single",
+      "drag": false
+    },
+    {
+      "id": 4,
+      "content": "吃冷热酸甜等刺激性食物以及用冷水刷牙时，牙齿有无酸、痛感，或出血现象？",
+      "mode": "multiple",
+      "drag": false
+    },
+    {
+      "id": 5,
+      "content": "咽下一口唾沫，等30s，感觉口腔内唾液分泌是否充足，有无干燥感？",
+      "mode": "single",
+      "drag": false
+    },
+    { "id": 6, "content": "舌苔呈什么颜色？", "mode": "single", "drag": false },
+    {
+      "id": 7,
+      "content": "根据一般情况选择您一天（选择您最多采用的搭配方式，面包、鸡蛋、果汁、肉类、甜点；所有食物都画出多少中，拖到一个盘子里）",
+      "mode": "multiple",
+      "drag": true
+    },
+    {
+      "id": 8,
+      "content": "您使用的口腔清洁工具",
+      "mode": "multiple",
+      "drag": false
+    },
+    {
+      "id": 9,
+      "content": "您每次的口腔清洁次数",
+      "mode": "single",
+      "drag": false
+    }
+  ],
+  "options": [
+    {
+      "id": 0,
+      "belong": 0,
+      "content": "完全没问题",
+      "pic": "../../../static/options/1A.png",
+      "val": 10
+    },
+    {
+      "id": 1,
+      "belong": 0,
+      "content": "少数缺失、少数龋坏",
+      "pic": "../../../static/options/1B.png",
+      "val": 5
+    },
+    {
+      "id": 2,
+      "belong": 0,
+      "content": "多牙缺失、多牙龋坏",
+      "pic": "../../../static/options/1C.png",
+      "val": 0
+    },
+    {
+      "id": 3,
+      "belong": 1,
+      "content": "不松动",
+      "pic": "../../../static/options/2A.png",
+      "val": 10
+    },
+    {
+      "id": 4,
+      "belong": 1,
+      "content": "轻微松动",
+      "pic": "../../../static/options/2B.png",
+      "val": 5
+    },
+    {
+      "id": 5,
+      "belong": 1,
+      "content": "严重松动",
+      "pic": "../../../static/options/2C.png",
+      "val": 0
+    },
+    {
+      "id": 6,
+      "belong": 2,
+      "content": "溃疡",
+      "pic": "../../../static/options/3A.png",
+      "val": 0
+    },
+    {
+      "id": 7,
+      "belong": 2,
+      "content": "异味",
+      "pic": "../../../static/options/3B.png",
+      "val": 0
+    },
+    {
+      "id": 8,
+      "belong": 2,
+      "content": "肿胀",
+      "pic": "../../../static/options/3C.png",
+      "val": 0
+    },
+    {
+      "id": 9,
+      "belong": 3,
+      "content": "粉红色",
+      "pic": "../../../static/options/4A.png",
+      "val": 10
+    },
+    {
+      "id": 10,
+      "belong": 3,
+      "content": "鲜红色",
+      "pic": "../../../static/options/4B.png",
+      "val": 8
+    },
+    {
+      "id": 11,
+      "belong": 3,
+      "content": "淡白色",
+      "pic": "../../../static/options/4C.png",
+      "val": 8
+    },
+    {
+      "id": 12,
+      "belong": 3,
+      "content": "暗红色",
+      "pic": "../../../static/options/4D.png",
+      "val": 5
+    },
+    {
+      "id": 13,
+      "belong": 3,
+      "content": "暗紫色",
+      "pic": "../../../static/options/4E.png",
+      "val": 0
+    },
+    {
+      "id": 14,
+      "belong": 4,
+      "content": "出血",
+      "pic": "../../../static/options/5A.png",
+      "val": 0
+    },
+    {
+      "id": 15,
+      "belong": 4,
+      "content": "酸痛",
+      "pic": "../../../static/options/5B.png",
+      "val": 0
+    },
+    { "id": 16, "belong": 4, "content": "无", "pic": "", "val": 10 },
+    { "id": 17, "belong": 5, "content": "有", "pic": "", "val": 10 },
+    { "id": 18, "belong": 5, "content": "无", "pic": "", "val": 0 },
+    {
+      "id": 19,
+      "belong": 6,
+      "content": "薄白",
+      "pic": "../../../static/options/7A.png",
+      "val": 5
+    },
+    {
+      "id": 20,
+      "belong": 6,
+      "content": "白厚",
+      "pic": "../../../static/options/7B.png",
+      "val": 3
+    },
+    {
+      "id": 21,
+      "belong": 6,
+      "content": "厚腻",
+      "pic": "../../../static/options/7C.png",
+      "val": 3
+    },
+    {
+      "id": 22,
+      "belong": 6,
+      "content": "黄苔",
+      "pic": "../../../static/options/7D.png",
+      "val": 2
+    },
+    {
+      "id": 23,
+      "belong": 6,
+      "content": "灰黑苔",
+      "pic": "../../../static/options/7E.png",
+      "val": 0
+    },
+    {
+      "id": 24,
+      "belong": 6,
+      "content": "剥落苔",
+      "pic": "../../../static/options/7F.png",
+      "val": 0
+    },
+    {
+      "id": 25,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8A.png",
+      "val": 0
+    },
+    {
+      "id": 26,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8B.png",
+      "val": 5
+    },
+    {
+      "id": 27,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8C.png",
+      "val": 0
+    },
+    {
+      "id": 28,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8D.png",
+      "val": 0
+    },
+    {
+      "id": 29,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8E.png",
+      "val": 4
+    },
+    {
+      "id": 30,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8F.png",
+      "val": 4
+    },
+    {
+      "id": 31,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8G.png",
+      "val": 4
+    },
+    {
+      "id": 32,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8H.png",
+      "val": 4
+    },
+    {
+      "id": 33,
+      "belong": 7,
+      "content": "",
+      "pic": "../../../static/options/8I.png",
+      "val": 0
+    },
+    { "id": 34, "belong": 8, "content": "每日一次", "pic": "", "val": 0 },
+    { "id": 35, "belong": 8, "content": "每日两次", "pic": "", "val": 2 },
+    { "id": 36, "belong": 8, "content": "每日三次", "pic": "", "val": 4 },
+    {
+      "id": 37,
+      "belong": 9,
+      "content": "",
+      "pic": "../../../static/options/10A.png",
+      "val": 1
+    },
+    {
+      "id": 38,
+      "belong": 9,
+      "content": "",
+      "pic": "../../../static/options/10B.png",
+      "val": 2
+    },
+    {
+      "id": 39,
+      "belong": 9,
+      "content": "",
+      "pic": "../../../static/options/10C.png",
+      "val": 1
+    },
+    {
+      "id": 40,
+      "belong": 9,
+      "content": "",
+      "pic": "../../../static/options/10D.png",
+      "val": 2
+    }
+  ]
+}
