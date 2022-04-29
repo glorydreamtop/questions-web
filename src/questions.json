@@ -277,33 +277,33 @@
       "pic": "../../../static/options/8I.png",
       "val": 0
     },
-    { "id": 34, "belong": 8, "content": "每日一次", "pic": "", "val": 0 },
-    { "id": 35, "belong": 8, "content": "每日两次", "pic": "", "val": 2 },
-    { "id": 36, "belong": 8, "content": "每日三次", "pic": "", "val": 4 },
+    { "id": 34, "belong": 9, "content": "每日一次", "pic": "", "val": 0 },
+    { "id": 35, "belong": 9, "content": "每日两次", "pic": "", "val": 2 },
+    { "id": 36, "belong": 9, "content": "每日三次", "pic": "", "val": 4 },
     {
       "id": 37,
-      "belong": 9,
+      "belong": 8,
       "content": "",
       "pic": "../../../static/options/10A.png",
       "val": 1
     },
     {
       "id": 38,
-      "belong": 9,
+      "belong": 8,
       "content": "",
       "pic": "../../../static/options/10B.png",
       "val": 2
     },
     {
       "id": 39,
-      "belong": 9,
+      "belong": 8,
       "content": "",
       "pic": "../../../static/options/10C.png",
       "val": 1
     },
     {
       "id": 40,
-      "belong": 9,
+      "belong": 8,
       "content": "",
       "pic": "../../../static/options/10D.png",
       "val": 2

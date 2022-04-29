@@ -1,7 +1,7 @@
 import { ProgressBar, Button } from "antd-mobile";
 import React, { useState } from "react";
 import "./index.less";
-import _questionsJson from "../../questions.json";
+import questionsJson from "../../questions.json";
 
 interface question {
   id: number;
@@ -19,15 +19,17 @@ interface option {
   val: number;
 }
 
-const questionsJson = JSON.parse(JSON.stringify(_questionsJson));
+interface answer {
+  questionId: number;
+  value: number;
+  optionId: number[];
+}
 
 const makeQA = (): question[] => {
   const questions: question[] = questionsJson.questions;
   const options: option[] = questionsJson.options;
   options.forEach((option) => {
     const ques = questions.find((q) => q.id === option.belong)!;
-    console.log(option.id);
-
     if (ques.options) {
       ques.options?.push(option);
     } else {
@@ -39,32 +41,89 @@ const makeQA = (): question[] => {
   return questions;
 };
 
+const answers: answer[] = [];
+
 const q = makeQA();
 
 export default () => {
   // 题目列表
   const [qusetions] = useState<question[]>(q);
   // 答案集
-  const [answers] = useState<{ [key: number]: number[] }>({});
+
   // 进度条
   const [progress, setProgress] = useState<number>(0);
   // 当前第几个问题
   const [questionIndex, setCurrentQuestion] = useState<number>(0);
   // 选中的答案
-  const [selected, setSelected] = useState<number | null>(1);
+  const [selected, setSelected] = useState<number[] | null>(null);
+
+  const choose = (id: number) => {
+    const isSingle = qusetions[questionIndex].mode === "single";
+    const value = questionsJson.options.find((option) => option.id === id)!.val;
+    const answer = answers.find(
+      (answer) => answer.questionId === qusetions[questionIndex].id
+    );
+
+    if (isSingle) {
+      setSelected([id]);
+      if (answer) {
+        answer.optionId = [id];
+        answer.value = value;
+      } else {
+        answers.push({
+          questionId: qusetions[questionIndex].id,
+          value,
+          optionId: [id],
+        });
+      }
+      console.log(answers);
+    } else {
+      const hasSelected = selected?.includes(id);
+      const selectIds = hasSelected
+        ? selected!.filter((i) => i !== id)
+        : [...selected!, id];
+      if (answer) {
+        setSelected(selectIds);
+        answer.optionId = selectIds;
+        answer.value = selectIds.reduce(
+          (acc, cur) =>
+            acc + questionsJson.options.find((option) => option.id === cur)!.val
+        );
+      } else {
+        setSelected(selectIds);
+        answers.push({
+          questionId: qusetions[questionIndex].id,
+          value,
+          optionId: [id],
+        });
+      }
+    }
+  };
   // 下一题
   const next = () => {
-    setCurrentQuestion(questionIndex + 1);
-    // 去掉勾选状态，更新进度
-    setProgress(((questionIndex + 1) / qusetions.length) * 100);
-    setSelected(null);
+    if (questionIndex === qusetions.length - 1) {
+      return;
+    } else {
+      setCurrentQuestion(questionIndex + 1);
+      // 去掉勾选状态，更新进度
+      setProgress(((questionIndex + 1) / qusetions.length) * 100);
+      const selectedId =
+        answers.find(
+          (item) => item.questionId === qusetions[questionIndex + 1].id
+        )?.optionId ?? [];
+      setSelected(selectedId);
+    }
   };
   // 上一题
   const pre = () => {
     setCurrentQuestion(questionIndex - 1);
     // 去掉勾选状态，更新进度
     setProgress((questionIndex / qusetions.length) * 100);
-    setSelected(null);
+    const selectedId =
+      answers.find(
+        (item) => item.questionId === qusetions[questionIndex - 1].id
+      )?.optionId ?? [];
+    setSelected(selectedId);
   };
   return (
     <>
@@ -89,9 +148,9 @@ export default () => {
           {qusetions[questionIndex].options!.map((option, index) => {
             return (
               <div
-                onClick={() => setSelected(option.id)}
+                onClick={() => choose(option.id)}
                 className={[
-                  selected === option.id ? "selected" : "not-selected",
+                  selected?.includes(option.id) ? "selected" : "not-selected",
                   "options",
                 ].join(" ")}
                 key={option.id}
@@ -99,7 +158,7 @@ export default () => {
                 <span>{String.fromCharCode(65 + index)}.</span>
                 <div className="flex items-center gap-2">
                   <img
-                    className="w-36 max-w-36 max-h-36 object-contain"
+                    className="w-32 max-w-32 max-h-32 object-contain"
                     src={option.pic}
                   />
                   <span className="text-xs">{option.content}</span>
@@ -113,7 +172,7 @@ export default () => {
             上一题
           </Button>
           <Button block color="primary" onClick={next}>
-            下一题
+            {questionIndex === qusetions.length - 1 ? "提交" : "下一题"}
           </Button>
         </div>
       </div>
