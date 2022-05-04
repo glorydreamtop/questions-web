@@ -283,28 +283,28 @@
     {
       "id": 37,
       "belong": 8,
-      "content": "",
+      "content": "普通牙刷",
       "pic": "../../../static/options/10A.png",
       "val": 1
     },
     {
       "id": 38,
       "belong": 8,
-      "content": "",
+      "content": "电动牙刷",
       "pic": "../../../static/options/10B.png",
       "val": 2
     },
     {
       "id": 39,
       "belong": 8,
-      "content": "",
+      "content": "牙签",
       "pic": "../../../static/options/10C.png",
       "val": 1
     },
     {
       "id": 40,
       "belong": 8,
-      "content": "",
+      "content": "冲牙器",
       "pic": "../../../static/options/10D.png",
       "val": 2
     }
